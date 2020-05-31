@@ -26,6 +26,8 @@ This file is part of AYAB.
 #include "./settings.h"
 #include "Arduino.h"
 
+#include "./beeper.h"
+#include "./encoders.h"
 #include "./src/libraries/PacketSerial/src/PacketSerial.h"
 #include "./solenoids.h"
 
