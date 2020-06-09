@@ -24,7 +24,7 @@ This file is part of AYAB.
 
 #include <Arduino.h>
 
-#include "./src/libraries/PacketSerial/src/PacketSerial.h"
+#include "../../src/libraries/PacketSerial/src/PacketSerial.h"
 
 #include "beeper.h"
 #include "debug.h"
