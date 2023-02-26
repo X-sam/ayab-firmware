@@ -14,10 +14,6 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get install arduino-mk
-#    - name: Prepare
-#      run: |
-#        export ARDMK_DIR=$(dirname $(find /usr -name Arduino.mk))
-#        export ARDUINO_DIR=$ARDMK_DIR
     - name: Build
       run: |
         ./build.sh
@@ -25,5 +21,5 @@ jobs:
     - name: Archive Build
       uses: actions/upload-artifact@v3
       with:
-        name: firmware hex files
+        name: ${{format('${0}-${1}',github.ref_name,github.run_number)}}
         path: build/*.hex
