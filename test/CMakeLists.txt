@@ -183,9 +183,8 @@ target_link_libraries(${PROJECT_NAME}_knitter
 )
 add_dependencies(${PROJECT_NAME}_knitter arduino_mock)
 
-# TODO(sl): Use gtest_discover_tests() ?
-# https://cmake.org/cmake/help/git-master/module/GoogleTest.html
 enable_testing()
-add_test(test_Uno ${PROJECT_NAME}_Uno)
-add_test(test_Mega ${PROJECT_NAME}_Mega)
-add_test(test_knitter ${PROJECT_NAME}_knitter)
+include(GoogleTest)
+gtest_discover_tests(${PROJECT_NAME}_Uno TEST_PREFIX Uno_)
+gtest_discover_tests(${PROJECT_NAME}_Mega TEST_PREFIX Mega_)
+gtest_discover_tests(${PROJECT_NAME}_knitter TEST_PREFIX Knitter_)
