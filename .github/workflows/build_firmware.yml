@@ -32,4 +32,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: firmware hex files
-        path: ayab-firmware.zip
+        path: build/ayab-firmware.zip
