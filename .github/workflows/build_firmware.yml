@@ -22,9 +22,14 @@ jobs:
       run: |
         ./build.sh
         ls build
-    - name: Archive
+    - name: Zip Archive
       run: |
         cd build
         zip ayab-firmware.zip ./*
         pwd
         ls
+    - name: Archive Build
+      uses: actions/upload-artifact@v3
+      with:
+        name: firmware hex files
+        path: ayab-firmware.zip
