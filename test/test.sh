@@ -38,7 +38,7 @@ if [[ $clean -eq 1 ]]; then
 fi
 
 make -j $(nproc) $make_verbose
-GTEST_COLOR=1 ctest $ctest_verbose --output-on-failure --output-junit ./test-result.xml .
+GTEST_COLOR=1 ctest $ctest_verbose --output-on-failure .
 
 cd ../..
 
